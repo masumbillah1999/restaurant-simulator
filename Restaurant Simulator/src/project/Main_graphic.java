@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -27,7 +29,7 @@ public class Main_graphic {
 					window.frmAtmBankMachine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
-				} //test
+				}
 			}
 		});
 	}
@@ -70,6 +72,8 @@ public class Main_graphic {
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GameMode newWindow = new GameMode();
+				newWindow.setVisible(true);
 			}
 		});
 		btnNext.setBounds(435, 206, 89, 23);
