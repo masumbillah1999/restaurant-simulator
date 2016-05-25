@@ -10,7 +10,11 @@ import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+<<<<<<< HEAD
 import javax.swing.JRadioButton;
+=======
+import java.awt.Toolkit;
+>>>>>>> branch 'master' of https://github.com/masumbillah1999/restaurant-simulator.git
 
 public class ManagerTurns extends JDialog {
 
@@ -35,6 +39,7 @@ public class ManagerTurns extends JDialog {
 	 * Create the dialog.
 	 */
 	public ManagerTurns() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ManagerTurns.class.getResource("/project/restaurant logo.png")));
 		setTitle("Manager Turn Window");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);

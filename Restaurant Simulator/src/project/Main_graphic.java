@@ -78,6 +78,7 @@ public class Main_graphic {
 				restaurantName = textField.getText();
 				GameMode newWindow = new GameMode();
 				newWindow.setVisible(true);
+				frmAtmBankMachine.setVisible(false);
 			}
 		});
 		btnNext.setBounds(435, 206, 89, 23);

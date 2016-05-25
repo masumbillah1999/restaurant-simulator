@@ -37,7 +37,7 @@ public class GameMode extends JDialog {
 	public GameMode() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(GameMode.class.getResource("/project/restaurant logo.png")));
 		setResizable(false);
-		setTitle("Welcome to " + Main_graphic.restaurantName);
+		setTitle("Welcome to " + Main_graphic.restaurantName + "'s Restaurant");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -65,6 +65,8 @@ public class GameMode extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				JobPick newWindow = new JobPick();
 				newWindow.setVisible(true);
+				setVisible(false);
+				
 			}
 		});
 		btnStart.setBounds(163, 180, 100, 70);

@@ -59,6 +59,7 @@ public class Manager extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 				ManagerTurns newWindow = new ManagerTurns();
 				newWindow.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnNext.setBounds(345, 238, 89, 23);

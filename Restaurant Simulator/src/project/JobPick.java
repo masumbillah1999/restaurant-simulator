@@ -49,6 +49,7 @@ public class JobPick extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 				Cashier newWindow = new Cashier();
 				newWindow.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnCashier.setBounds(10, 72, 175, 179);
@@ -59,6 +60,7 @@ public class JobPick extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				Manager newWindow = new Manager();
 				newWindow.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnManager.setBounds(249, 72, 175, 179);
