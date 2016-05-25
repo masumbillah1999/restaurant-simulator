@@ -34,7 +34,7 @@ public class CashierTurns extends JDialog {
 		getContentPane().setLayout(null);
 		
 		String[] customers = {"Bob","Jack","Timmy","John","Steve","Jacob","Jim","Stacey","Angelina","Tyrone"};
-
+		String[] items = {"Chicken","Beef","Pork","Veggies","Lamb","Steamed Crab","Lobster","Salad","Mac & Cheese","Omelette	"};
 	}
 
 }
