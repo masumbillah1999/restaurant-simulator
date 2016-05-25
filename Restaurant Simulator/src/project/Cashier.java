@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Toolkit;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
+import javax.swing.JTextPane;
 
 public class Cashier extends JDialog {
 
@@ -36,6 +37,15 @@ public class Cashier extends JDialog {
 		setResizable(false);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
+		
+		JTextPane txtpnYou = new JTextPane();
+		txtpnYou.setText("You have chosen to become the cashier!\r\n\r\nYou ");
+		txtpnYou.setBounds(10, 11, 424, 50);
+		getContentPane().add(txtpnYou);
+		
+		String[] customers = {"Bob","Jack","Timmy","John","Steve","Jacob","Jim","Stacey","Angelina","Tyrone"};
+
+		
 		
 		
 	}
