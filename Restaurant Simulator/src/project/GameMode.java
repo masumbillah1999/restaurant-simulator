@@ -65,6 +65,8 @@ public class GameMode extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				JobPick newWindow = new JobPick();
 				newWindow.setVisible(true);
+				setVisible(false);
+				
 			}
 		});
 		btnStart.setBounds(163, 180, 100, 70);
