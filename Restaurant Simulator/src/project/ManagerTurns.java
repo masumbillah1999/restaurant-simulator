@@ -44,7 +44,7 @@ public class ManagerTurns extends JDialog {
 		JTextPane txtpnYourCurrentBudget = new JTextPane();
 		txtpnYourCurrentBudget.setEditable(false);
 		txtpnYourCurrentBudget.setText("Your current budget: " + budget + "$");
-		txtpnYourCurrentBudget.setBounds(10, 11, 158, 20);
+		txtpnYourCurrentBudget.setBounds(10, 11, 175, 20);
 		getContentPane().add(txtpnYourCurrentBudget);
 		
 		JTextPane txtpnSatisfaction = new JTextPane();
@@ -62,11 +62,11 @@ public class ManagerTurns extends JDialog {
 		JTextPane txtpnWelcomeToThe = new JTextPane();
 		txtpnWelcomeToThe.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtpnWelcomeToThe.setText("Welcome to the manager store, check all the things you wish to purchase, then press next.");
-		txtpnWelcomeToThe.setBounds(10, 50, 414, 38);
+		txtpnWelcomeToThe.setBounds(10, 42, 414, 38);
 		getContentPane().add(txtpnWelcomeToThe);
 		
 		JCheckBox checkBox = new JCheckBox(storeItems[0]);
-		checkBox.setBounds(10, 95, 97, 23);
+		checkBox.setBounds(10, 95, 205, 23);
 		getContentPane().add(checkBox);
 		
 		JCheckBox checkBox_1 = new JCheckBox(storeItems[1]);
