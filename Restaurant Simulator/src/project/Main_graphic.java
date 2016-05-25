@@ -12,6 +12,7 @@ import javax.swing.JDialog;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import java.awt.Toolkit;
 
 public class Main_graphic {
 
@@ -47,6 +48,7 @@ public class Main_graphic {
 	 */
 	private void initialize() {
 		frmAtmBankMachine = new JFrame();
+		frmAtmBankMachine.setIconImage(Toolkit.getDefaultToolkit().getImage(Main_graphic.class.getResource("/project/restaurant logo.png")));
 		frmAtmBankMachine.setResizable(false);
 		frmAtmBankMachine.setTitle("Restaurant Simulator\r\n");
 		frmAtmBankMachine.setBounds(100, 100, 540, 281);

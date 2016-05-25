@@ -12,6 +12,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class GameMode extends JDialog {
 
@@ -34,6 +35,7 @@ public class GameMode extends JDialog {
 	 * Create the dialog.
 	 */
 	public GameMode() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(GameMode.class.getResource("/project/restaurant logo.png")));
 		setResizable(false);
 		setTitle("Welcome to " + Main_graphic.restaurantName);
 		setBounds(100, 100, 450, 300);
@@ -58,14 +60,14 @@ public class GameMode extends JDialog {
 		btnRules.setBounds(10, 180, 100, 70);
 		contentPanel.add(btnRules);
 		
-		JButton btnStart = new JButton("Start");
+		JButton btnStart = new JButton("Cashier");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jobPick newWindow = new jobPick();
+				Cashier newWindow = new Cashier();
 				newWindow.setVisible(true);
 			}
 		});
-		btnStart.setBounds(172, 180, 100, 70);
+		btnStart.setBounds(163, 180, 100, 70);
 		contentPanel.add(btnStart);
 		
 		JButton btnExit = new JButton("Exit");

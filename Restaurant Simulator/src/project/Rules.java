@@ -16,6 +16,7 @@ import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class Rules extends JDialog {
 
@@ -38,6 +39,7 @@ public class Rules extends JDialog {
 	 * Create the dialog.
 	 */
 	public Rules() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Rules.class.getResource("/project/restaurant logo.png")));
 		setResizable(false);
 		setTitle("Rules");
 		setBounds(100, 100, 450, 300);
