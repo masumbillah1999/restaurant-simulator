@@ -10,6 +10,7 @@ import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import java.awt.Toolkit;
 
 public class ManagerTurns extends JDialog {
 
@@ -34,6 +35,7 @@ public class ManagerTurns extends JDialog {
 	 * Create the dialog.
 	 */
 	public ManagerTurns() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ManagerTurns.class.getResource("/project/restaurant logo.png")));
 		setTitle("Manager Turn Window");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
