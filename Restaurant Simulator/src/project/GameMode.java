@@ -59,6 +59,12 @@ public class GameMode extends JDialog {
 		contentPanel.add(btnRules);
 		
 		JButton btnStart = new JButton("Start");
+		btnStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jobPick newWindow = new jobPick();
+				newWindow.setVisible(true);
+			}
+		});
 		btnStart.setBounds(172, 180, 100, 70);
 		contentPanel.add(btnStart);
 		
