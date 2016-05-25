@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JCheckBox;
+import javax.swing.JButton;
 
 public class ManagerTurns extends JDialog {
 
@@ -38,7 +39,7 @@ public class ManagerTurns extends JDialog {
 		getContentPane().setLayout(null);
 		
 		int budget = 10000, satisfaction = 50, fame = 50;
-		String [] storeItems = new String [] {"Potted Plants", "Under-paid employee in a mascot costume", "Newspaper article", "Higher quality food", "Fancy table cloths", "Provide free meals to kids", "Hold a charity fundraiser", "Sponser local sports team", "Create a website", "Forge Yelp reviews"};
+		String [] storeItems = new String [] {"Potted Plants",  "Higher quality food",  "Provide free meals to kids", "Hold a charity fundraiser", "Sponser local sports team", "Employee in a mascot costume", "Newspaper article", "Fancy table cloths", "Create a website", "Forge Yelp reviews"};
 		
 		JTextPane txtpnYourCurrentBudget = new JTextPane();
 		txtpnYourCurrentBudget.setEditable(false);
@@ -64,45 +65,49 @@ public class ManagerTurns extends JDialog {
 		txtpnWelcomeToThe.setBounds(10, 50, 414, 38);
 		getContentPane().add(txtpnWelcomeToThe);
 		
-		JCheckBox checkBox = new JCheckBox(storeItems[1]);
+		JCheckBox checkBox = new JCheckBox(storeItems[0]);
 		checkBox.setBounds(10, 95, 97, 23);
 		getContentPane().add(checkBox);
 		
-		JCheckBox checkBox_1 = new JCheckBox("2");
-		checkBox_1.setBounds(10, 121, 97, 23);
+		JCheckBox checkBox_1 = new JCheckBox(storeItems[1]);
+		checkBox_1.setBounds(10, 121, 205, 23);
 		getContentPane().add(checkBox_1);
 		
-		JCheckBox checkBox_2 = new JCheckBox("3");
-		checkBox_2.setBounds(10, 147, 97, 23);
+		JCheckBox checkBox_2 = new JCheckBox(storeItems[2]);
+		checkBox_2.setBounds(10, 147, 205, 23);
 		getContentPane().add(checkBox_2);
 		
-		JCheckBox checkBox_3 = new JCheckBox("4");
-		checkBox_3.setBounds(10, 173, 97, 23);
+		JCheckBox checkBox_3 = new JCheckBox(storeItems[3]);
+		checkBox_3.setBounds(10, 173, 205, 23);
 		getContentPane().add(checkBox_3);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("5");
-		chckbxNewCheckBox.setBounds(10, 199, 97, 23);
+		JCheckBox chckbxNewCheckBox = new JCheckBox(storeItems[4]);
+		chckbxNewCheckBox.setBounds(10, 199, 205, 23);
 		getContentPane().add(chckbxNewCheckBox);
 		
-		JCheckBox checkBox_4 = new JCheckBox("11");
-		checkBox_4.setBounds(217, 95, 97, 23);
+		JCheckBox checkBox_4 = new JCheckBox(storeItems[5]);
+		checkBox_4.setBounds(217, 95, 207, 23);
 		getContentPane().add(checkBox_4);
 		
-		JCheckBox checkBox_5 = new JCheckBox("12");
-		checkBox_5.setBounds(217, 121, 97, 23);
+		JCheckBox checkBox_5 = new JCheckBox(storeItems[6]);
+		checkBox_5.setBounds(217, 121, 207, 23);
 		getContentPane().add(checkBox_5);
 		
-		JCheckBox checkBox_6 = new JCheckBox("13");
-		checkBox_6.setBounds(217, 147, 97, 23);
+		JCheckBox checkBox_6 = new JCheckBox(storeItems[7]);
+		checkBox_6.setBounds(217, 147, 207, 23);
 		getContentPane().add(checkBox_6);
 		
-		JCheckBox checkBox_7 = new JCheckBox("14");
-		checkBox_7.setBounds(217, 173, 97, 23);
+		JCheckBox checkBox_7 = new JCheckBox(storeItems[8]);
+		checkBox_7.setBounds(217, 173, 207, 23);
 		getContentPane().add(checkBox_7);
 		
-		JCheckBox checkBox_8 = new JCheckBox("15");
-		checkBox_8.setBounds(217, 199, 97, 23);
+		JCheckBox checkBox_8 = new JCheckBox(storeItems[9]);
+		checkBox_8.setBounds(217, 199, 207, 23);
 		getContentPane().add(checkBox_8);
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.setBounds(335, 228, 89, 23);
+		getContentPane().add(btnNext);
 
 	}
 }
