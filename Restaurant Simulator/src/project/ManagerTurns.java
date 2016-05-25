@@ -10,6 +10,7 @@ import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
 public class ManagerTurns extends JDialog {
 
@@ -65,49 +66,49 @@ public class ManagerTurns extends JDialog {
 		txtpnWelcomeToThe.setBounds(10, 42, 414, 38);
 		getContentPane().add(txtpnWelcomeToThe);
 		
-		JCheckBox checkBox = new JCheckBox(storeItems[0]);
-		checkBox.setBounds(10, 95, 205, 23);
-		getContentPane().add(checkBox);
-		
-		JCheckBox checkBox_1 = new JCheckBox(storeItems[1]);
-		checkBox_1.setBounds(10, 121, 205, 23);
-		getContentPane().add(checkBox_1);
-		
-		JCheckBox checkBox_2 = new JCheckBox(storeItems[2]);
-		checkBox_2.setBounds(10, 147, 205, 23);
-		getContentPane().add(checkBox_2);
-		
-		JCheckBox checkBox_3 = new JCheckBox(storeItems[3]);
-		checkBox_3.setBounds(10, 173, 205, 23);
-		getContentPane().add(checkBox_3);
-		
-		JCheckBox chckbxNewCheckBox = new JCheckBox(storeItems[4]);
-		chckbxNewCheckBox.setBounds(10, 199, 205, 23);
-		getContentPane().add(chckbxNewCheckBox);
-		
-		JCheckBox checkBox_4 = new JCheckBox(storeItems[5]);
-		checkBox_4.setBounds(217, 95, 207, 23);
-		getContentPane().add(checkBox_4);
-		
-		JCheckBox checkBox_5 = new JCheckBox(storeItems[6]);
-		checkBox_5.setBounds(217, 121, 207, 23);
-		getContentPane().add(checkBox_5);
-		
-		JCheckBox checkBox_6 = new JCheckBox(storeItems[7]);
-		checkBox_6.setBounds(217, 147, 207, 23);
-		getContentPane().add(checkBox_6);
-		
-		JCheckBox checkBox_7 = new JCheckBox(storeItems[8]);
-		checkBox_7.setBounds(217, 173, 207, 23);
-		getContentPane().add(checkBox_7);
-		
-		JCheckBox checkBox_8 = new JCheckBox(storeItems[9]);
-		checkBox_8.setBounds(217, 199, 207, 23);
-		getContentPane().add(checkBox_8);
-		
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(335, 228, 89, 23);
 		getContentPane().add(btnNext);
+		
+		JRadioButton radioButton = new JRadioButton("1");
+		radioButton.setBounds(20, 87, 109, 23);
+		getContentPane().add(radioButton);
+		
+		JRadioButton radioButton_1 = new JRadioButton("2");
+		radioButton_1.setBounds(20, 116, 109, 23);
+		getContentPane().add(radioButton_1);
+		
+		JRadioButton radioButton_2 = new JRadioButton("3");
+		radioButton_2.setBounds(20, 144, 109, 23);
+		getContentPane().add(radioButton_2);
+		
+		JRadioButton radioButton_3 = new JRadioButton("4");
+		radioButton_3.setBounds(20, 170, 109, 23);
+		getContentPane().add(radioButton_3);
+		
+		JRadioButton radioButton_4 = new JRadioButton("5");
+		radioButton_4.setBounds(20, 196, 109, 23);
+		getContentPane().add(radioButton_4);
+		
+		JRadioButton radioButton_5 = new JRadioButton("6");
+		radioButton_5.setBounds(228, 87, 109, 23);
+		getContentPane().add(radioButton_5);
+		
+		JRadioButton radioButton_6 = new JRadioButton("7");
+		radioButton_6.setBounds(228, 116, 109, 23);
+		getContentPane().add(radioButton_6);
+		
+		JRadioButton radioButton_7 = new JRadioButton("8");
+		radioButton_7.setBounds(228, 144, 109, 23);
+		getContentPane().add(radioButton_7);
+		
+		JRadioButton radioButton_8 = new JRadioButton("9");
+		radioButton_8.setBounds(228, 170, 109, 23);
+		getContentPane().add(radioButton_8);
+		
+		JRadioButton radioButton_9 = new JRadioButton("10");
+		radioButton_9.setBounds(228, 196, 109, 23);
+		getContentPane().add(radioButton_9);
 
 	}
 }
