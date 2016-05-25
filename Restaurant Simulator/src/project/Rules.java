@@ -75,7 +75,7 @@ public class Rules extends JDialog {
 		txtpnSdfhdzfbSzdFdfg.setEditable(false);
 		txtpnSdfhdzfbSzdFdfg.setBackground(SystemColor.control);
 		txtpnSdfhdzfbSzdFdfg.setText("Welcome to the wonderful world of being a cashier!!!!!!!! \r\n\r\nYour goal is to enter the totals from a customer's receipt into your cash register as fast as possible so as to be able to raise your customer satisfaction score to 10 (you start at 5). If your score falls to 0, then you lose, if it goes to 10, you win! Once you have completed a receipt you will receive a tip based upon that customer's rating of you. You can use these tips to purchase powerups that will give you a little extra time.\r\n");
-		txtpnSdfhdzfbSzdFdfg.setBounds(20, 23, 414, 214);
+		txtpnSdfhdzfbSzdFdfg.setBounds(20, 24, 414, 214);
 		getContentPane().add(txtpnSdfhdzfbSzdFdfg);
 	}
 }
