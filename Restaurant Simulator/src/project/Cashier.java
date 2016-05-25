@@ -37,14 +37,6 @@ public class Cashier extends JDialog {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon("/project/20160205_224822.jpg"));
-		
-		lblNewLabel.setBounds(39, 27, 374, 202);
-		getContentPane().add(lblNewLabel);
-		
-		add(getContentPane());
-		validate();
 		
 	}
 }

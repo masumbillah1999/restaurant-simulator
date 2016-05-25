@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 import java.awt.Label;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class Rules extends JDialog {
 
@@ -45,6 +47,7 @@ public class Rules extends JDialog {
 	 * Create the dialog.
 	 */
 	public Rules() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Rules.class.getResource("/project/restaurant logo.png")));
 		setResizable(false);
 		setTitle("Rules");
 		setBounds(100, 100, 450, 300);
@@ -72,6 +75,7 @@ public class Rules extends JDialog {
 		}
 		
 		JTextPane txtpnSdfhdzfbSzdFdfg = new JTextPane();
+		txtpnSdfhdzfbSzdFdfg.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtpnSdfhdzfbSzdFdfg.setEditable(false);
 		txtpnSdfhdzfbSzdFdfg.setBackground(SystemColor.control);
 		txtpnSdfhdzfbSzdFdfg.setText("Welcome to the wonderful world of being a cashier!!!!!!!! \r\n\r\nYour goal is to enter the totals from a customer's receipt into your cash register as fast as possible so as to be able to raise your customer satisfaction score to 10 (you start at 5). If your score falls to 0, then you lose, if it goes to 10, you win! Once you have completed a receipt you will receive a tip based upon that customer's rating of you. You can use these tips to purchase powerups that will give you a little extra time.\r\n");
