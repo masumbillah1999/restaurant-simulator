@@ -60,10 +60,10 @@ public class GameMode extends JDialog {
 		btnRules.setBounds(10, 180, 100, 70);
 		contentPanel.add(btnRules);
 		
-		JButton btnStart = new JButton("Cashier");
+		JButton btnStart = new JButton("Pick a job");
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cashier newWindow = new Cashier();
+				JobPick newWindow = new JobPick();
 				newWindow.setVisible(true);
 			}
 		});
