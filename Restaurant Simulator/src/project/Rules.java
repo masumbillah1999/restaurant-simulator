@@ -2,6 +2,7 @@ package project;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Image;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -9,13 +10,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+
 import java.awt.Color;
 import java.awt.Dialog;
 
 import javax.swing.UIManager;
+
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.SwingConstants;
+
+import java.awt.Label;
 
 public class Rules extends JDialog {
 
@@ -67,8 +74,8 @@ public class Rules extends JDialog {
 		JTextPane txtpnSdfhdzfbSzdFdfg = new JTextPane();
 		txtpnSdfhdzfbSzdFdfg.setEditable(false);
 		txtpnSdfhdzfbSzdFdfg.setBackground(SystemColor.control);
-		txtpnSdfhdzfbSzdFdfg.setText("The rules go here...");
-		txtpnSdfhdzfbSzdFdfg.setBounds(10, 11, 414, 204);
+		txtpnSdfhdzfbSzdFdfg.setText("Welcome to the wonderful world of being a cashier!!!!!!!! \r\n\r\nYour goal is to enter the totals from a customer's receipt into your cash register as fast as possible so as to be able to raise your customer satisfaction score to 10 (you start at 5). If your score falls to 0, then you lose, if it goes to 10, you win! Once you have completed a receipt you will receive a tip based upon that customer's rating of you. You can use these tips to purchase powerups that will give you a little extra time.\r\n");
+		txtpnSdfhdzfbSzdFdfg.setBounds(20, 23, 414, 214);
 		getContentPane().add(txtpnSdfhdzfbSzdFdfg);
 	}
 }
