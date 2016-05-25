@@ -70,44 +70,44 @@ public class ManagerTurns extends JDialog {
 		btnNext.setBounds(335, 228, 89, 23);
 		getContentPane().add(btnNext);
 		
-		JRadioButton radioButton = new JRadioButton("1");
-		radioButton.setBounds(20, 87, 109, 23);
+		JRadioButton radioButton = new JRadioButton(storeItems [0]);
+		radioButton.setBounds(20, 87, 186, 23);
 		getContentPane().add(radioButton);
 		
-		JRadioButton radioButton_1 = new JRadioButton("2");
-		radioButton_1.setBounds(20, 116, 109, 23);
+		JRadioButton radioButton_1 = new JRadioButton(storeItems [1]);
+		radioButton_1.setBounds(20, 116, 186, 23);
 		getContentPane().add(radioButton_1);
 		
-		JRadioButton radioButton_2 = new JRadioButton("3");
-		radioButton_2.setBounds(20, 144, 109, 23);
+		JRadioButton radioButton_2 = new JRadioButton(storeItems [2]);
+		radioButton_2.setBounds(20, 144, 186, 23);
 		getContentPane().add(radioButton_2);
 		
-		JRadioButton radioButton_3 = new JRadioButton("4");
-		radioButton_3.setBounds(20, 170, 109, 23);
+		JRadioButton radioButton_3 = new JRadioButton(storeItems [3]);
+		radioButton_3.setBounds(20, 170, 186, 23);
 		getContentPane().add(radioButton_3);
 		
-		JRadioButton radioButton_4 = new JRadioButton("5");
-		radioButton_4.setBounds(20, 196, 109, 23);
+		JRadioButton radioButton_4 = new JRadioButton(storeItems [4]);
+		radioButton_4.setBounds(20, 196, 186, 23);
 		getContentPane().add(radioButton_4);
 		
-		JRadioButton radioButton_5 = new JRadioButton("6");
-		radioButton_5.setBounds(228, 87, 109, 23);
+		JRadioButton radioButton_5 = new JRadioButton(storeItems [5]);
+		radioButton_5.setBounds(207, 87, 217, 23);
 		getContentPane().add(radioButton_5);
 		
-		JRadioButton radioButton_6 = new JRadioButton("7");
-		radioButton_6.setBounds(228, 116, 109, 23);
+		JRadioButton radioButton_6 = new JRadioButton(storeItems [6]);
+		radioButton_6.setBounds(207, 116, 217, 23);
 		getContentPane().add(radioButton_6);
 		
-		JRadioButton radioButton_7 = new JRadioButton("8");
-		radioButton_7.setBounds(228, 144, 109, 23);
+		JRadioButton radioButton_7 = new JRadioButton(storeItems [7]);
+		radioButton_7.setBounds(207, 144, 217, 23);
 		getContentPane().add(radioButton_7);
 		
-		JRadioButton radioButton_8 = new JRadioButton("9");
-		radioButton_8.setBounds(228, 170, 109, 23);
+		JRadioButton radioButton_8 = new JRadioButton(storeItems [8]);
+		radioButton_8.setBounds(207, 170, 217, 23);
 		getContentPane().add(radioButton_8);
 		
-		JRadioButton radioButton_9 = new JRadioButton("10");
-		radioButton_9.setBounds(228, 196, 109, 23);
+		JRadioButton radioButton_9 = new JRadioButton(storeItems [9]);
+		radioButton_9.setBounds(207, 196, 217, 23);
 		getContentPane().add(radioButton_9);
 
 	}
