@@ -70,16 +70,16 @@ public class Rules extends JDialog {
 					setVisible(false);
 				}
 			});
-			btnOk.setBounds(335, 226, 89, 23);
+			btnOk.setBounds(345, 238, 89, 23);
 			getContentPane().add(btnOk);
 		}
 		
 		JTextPane txtpnSdfhdzfbSzdFdfg = new JTextPane();
-		txtpnSdfhdzfbSzdFdfg.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtpnSdfhdzfbSzdFdfg.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		txtpnSdfhdzfbSzdFdfg.setEditable(false);
 		txtpnSdfhdzfbSzdFdfg.setBackground(SystemColor.control);
-		txtpnSdfhdzfbSzdFdfg.setText("Welcome to the wonderful world of being a cashier!!!!!!!! \r\n\r\nYour goal is to enter the totals from a customer's receipt into your cash register as fast as possible so as to be able to raise your customer satisfaction score to 10 (you start at 5). If your score falls to 0, then you lose, if it goes to 10, you win! Once you have completed a receipt you will receive a tip based upon that customer's rating of you. You can use these tips to purchase powerups that will give you a little extra time.\r\n");
-		txtpnSdfhdzfbSzdFdfg.setBounds(20, 24, 414, 214);
+		txtpnSdfhdzfbSzdFdfg.setText("If you are a cashier:\r\n\r\nYour goal is to enter the totals from a customer's receipt into your cash register as fast as possible so as to be able to raise your customer satisfaction score to 10 (you start at 5). If your score falls to 0, then you lose, if it goes to 10, you win! Once you have completed a receipt you will receive a tip based upon that customer's rating of you. You can use these tips to purchase powerups that will give you a little extra time.\r\n\r\nIf you are a manager:\r\n\r\nYour goal is to get your customer satisfaction and restaurant fame levels from 5 (the starting point) to 10. If these levels drop to 0, then you lose. You will start with a budget of $10 000 and you will be able to invest this money in different objects, all of which will have different effects. At the end of every turn you may lose or earn money, so be careful with your investments!");
+		txtpnSdfhdzfbSzdFdfg.setBounds(10, 11, 414, 250);
 		getContentPane().add(txtpnSdfhdzfbSzdFdfg);
 	}
 }
