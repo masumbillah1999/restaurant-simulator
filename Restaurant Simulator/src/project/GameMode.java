@@ -7,6 +7,11 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GameMode extends JDialog {
 
@@ -29,27 +34,41 @@ public class GameMode extends JDialog {
 	 * Create the dialog.
 	 */
 	public GameMode() {
+		setResizable(false);
+		setTitle("Welcome to " + Main_graphic.restaurantName);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		{
-			JPanel buttonPane = new JPanel();
-			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			{
-				JButton okButton = new JButton("OK");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+		contentPanel.setLayout(null);
+		
+		JLabel lblMenu = new JLabel("Menu");
+		lblMenu.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMenu.setFont(new Font("Microsoft YaHei", Font.BOLD, 64));
+		lblMenu.setBounds(10, 11, 414, 85);
+		contentPanel.add(lblMenu);
+		
+		JButton btnRules = new JButton("Rules");
+		btnRules.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Rules newWindow = new Rules();
+				newWindow.setVisible(true);
 			}
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+		});
+		btnRules.setBounds(10, 180, 100, 70);
+		contentPanel.add(btnRules);
+		
+		JButton btnStart = new JButton("Start");
+		btnStart.setBounds(172, 180, 100, 70);
+		contentPanel.add(btnStart);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(EXIT_ON_CLOSE);
 			}
-		}
+		});
+		btnExit.setBounds(324, 180, 100, 70);
+		contentPanel.add(btnExit);
 	}
-
 }

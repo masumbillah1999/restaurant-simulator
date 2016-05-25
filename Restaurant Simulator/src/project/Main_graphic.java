@@ -17,6 +17,7 @@ public class Main_graphic {
 
 	private JFrame frmAtmBankMachine;
 	private JTextField textField;
+	public static String restaurantName; 
 
 	/**
 	 * Launch the application.
@@ -72,6 +73,7 @@ public class Main_graphic {
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				restaurantName = textField.getText();
 				GameMode newWindow = new GameMode();
 				newWindow.setVisible(true);
 			}
