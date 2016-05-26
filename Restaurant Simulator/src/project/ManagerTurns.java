@@ -91,64 +91,8 @@ public class ManagerTurns extends JDialog {
 		txtpnWelcomeToThe.setBounds(10, 42, 414, 38);
 		getContentPane().add(txtpnWelcomeToThe);
 
-		JButton btnNext = new JButton("Next");
-		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				switch (randnum())
-				{
-				case 0:
-					event = "Restaurant gets sued! Lose $2000 from your budget";
-					budget -= 2000;
-					fame += 10;
-					satisfaction -=20;
-					break;
-				case 1:
-					event = "Locals love your restaurant!";
-					budget += 500;
-					fame -= 5;
-					satisfaction +=10;
-					break;
-				case 2:
-					event = "A couple cases of cold food have been reported! Pay $500 in compensation.";
-					budget -= 500;
-					fame -= 10;
-					satisfaction -=10;
-					break;
-				case 3:
-					event = "A new item on the menu was a success!";
-					budget += 1000;
-					fame += 10;
-					satisfaction +=10;
-					break;
-				case 4:
-					event = "Your restaurant gets 'meh' reviews, nothing happens";
-					break;
-				case 5:
-					event = "Restaurant becomes haunted, call the Ghostbusters";
-					budget -= 5000;
-					fame += 23;
-					break;
-				case 6:
-					event = "";
-					budget -= 2000;
-					fame += 10;
-					satisfaction -=20;
-					break;
-				case 7:
-					
-					break;
-				case 8:
-					
-					break;
-				case 9:
-					
-					break;
-				}
-			}
-		});
-		btnNext.setBounds(334, 340, 89, 23);
-		getContentPane().add(btnNext);
+		
+	
 
 		JRadioButton radioButton = new JRadioButton(storeItems[0]);
 		radioButton.setBounds(20, 87, 186, 23);
@@ -201,11 +145,133 @@ public class ManagerTurns extends JDialog {
 		managerGroup.add(radioButton_8);
 		managerGroup.add(radioButton_9);
 		
+		if (radioButton.isSelected())
+		{
+			budget -= 150;
+			satisfaction +=5;
+		}
+		else if (radioButton_1.isSelected())
+		{
+			budget -= 200;
+			satisfaction +=10;
+		}
+		else if (radioButton_2.isSelected())
+		{
+			budget -= 500;
+			satisfaction += 15;
+		}
+		else if (radioButton_3.isSelected())
+		{
+			budget -= 1000;
+			satisfaction +=15;
+			fame += 5;
+		}
+		else if (radioButton_4.isSelected())
+		{
+			budget -= 2000;
+			satisfaction +=15;
+			fame += 10;
+		}
+		else if (radioButton_5.isSelected())
+		{
+			budget -= 150;
+			fame +=5;
+		}
+		else if (radioButton_6.isSelected())
+		{
+			budget -= 200;
+			fame +=10;
+		}
+		else if (radioButton_7.isSelected())
+		{
+			budget -= 500;
+			fame +=15;
+		}
+		else if (radioButton_8.isSelected())
+		{
+			budget -= 1000;
+			fame +=15;
+			satisfaction += 5;
+		}
+		else if (radioButton_9.isSelected())
+		{
+			budget -= 2000;
+			fame +=15;
+			satisfaction += 10;
+		}
+		
 		JTextPane txtpnEvent = new JTextPane();
 		txtpnEvent.setText("Event: " + event);
 		txtpnEvent.setBounds(10, 226, 413, 102);
 		getContentPane().add(txtpnEvent);
 
+		JButton btnNext = new JButton("Next");
+		btnNext.setBounds(334, 340, 89, 23);
+		getContentPane().add(btnNext);
+		
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				switch (randnum())
+				{
+				case 0:
+					event = "Restaurant gets sued! Lose $2000 from your budget";
+					budget -= 2000;
+					fame += 10;
+					satisfaction -=20;
+					break;
+				case 1:
+					event = "Locals love your restaurant!";
+					budget += 500;
+					fame -= 5;
+					satisfaction +=10;
+					break;
+				case 2:
+					event = "A couple cases of cold food have been reported! Pay $500 in compensation.";
+					budget -= 500;
+					fame -= 10;
+					satisfaction -=10;
+					break;
+				case 3:
+					event = "A new item on the menu was a success!";
+					budget += 1000;
+					fame += 10;
+					satisfaction +=10;
+					break;
+				case 4:
+					event = "Your restaurant gets 'meh' reviews, nothing happens";
+					break;
+				case 5:
+					event = "Restaurant becomes haunted, call the Ghostbusters";
+					budget -= 5000;
+					fame += 23;
+					break;
+				case 6:
+					event = "Find a loonie on the ground and pick it up, customers think you're cheap";
+					budget += 1;
+					fame += 5;
+					satisfaction -=10;
+					break;
+				case 7:
+					event = "Your restaurant has the same name as another famous restaurant in Italy";
+					fame += 15;
+					break;
+				case 8:
+					event = "Store wins the lottery (somehow)";
+					budget += 2000;
+					fame += 5;
+					break;
+				case 9:
+					event = "Old burger-flipper joe's dentures broke apart and fell into multiple hamburgers, satisfaction plummets";
+					satisfaction -=20;
+					break;
+				}
+				ManagerTurns newWindow = new ManagerTurns();
+				newWindow.setVisible(true);
+				setVisible(false);
+			}
+		
+		});
 	}
 	
 	public static int randnum ()
