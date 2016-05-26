@@ -122,16 +122,18 @@ public class ManagerTurns extends JDialog {
 					satisfaction +=10;
 					break;
 				case 4:
-					event = "Restaurant gets sued! Lose $2000 from your budget";
+					event = "Your restaurant gets 'meh' reviews, nothing happens";
+					break;
+				case 5:
+					event = "Restaurant becomes haunted, call the Ghostbusters";
+					budget -= 5000;
+					fame += 23;
+					break;
+				case 6:
+					event = "";
 					budget -= 2000;
 					fame += 10;
 					satisfaction -=20;
-					break;
-				case 5:
-					
-					break;
-				case 6:
-					
 					break;
 				case 7:
 					
