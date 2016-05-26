@@ -4,15 +4,23 @@ import java.awt.EventQueue;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+
 import java.awt.SystemColor;
 import java.awt.Color;
+
 import javax.swing.JTextPane;
+
 import java.awt.Font;
+
 import javax.swing.JCheckBox;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.Random;
 
 public class ManagerTurns extends JDialog {
 
@@ -42,16 +50,22 @@ public class ManagerTurns extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	
+	public static int budget = 10000, satisfaction = 50, fame = 50;
+	public static String event;
+	
 	public ManagerTurns() {
+
+		
 		setIconImage(
 				Toolkit.getDefaultToolkit().getImage(ManagerTurns.class.getResource("/project/restaurant logo.png")));
 		setTitle("Manager Game");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 449, 413);
 		getContentPane().setLayout(null);
 
-		int budget = 10000, satisfaction = 50, fame = 50;
 		String[] storeItems = new String[] { "Potted Plants", "Higher quality food", "Provide free meals to kids", "Hold a charity fundraiser", "Sponser local sports team", "Employee in a mascot costume", "Newspaper article", "Fancy table cloths", "Create a website", "Forge Yelp reviews" };
-
+		
+		
 		JTextPane txtpnYourCurrentBudget = new JTextPane();
 		txtpnYourCurrentBudget.setEditable(false);
 		txtpnYourCurrentBudget.setText("Your current budget: " + budget + "$");
@@ -78,7 +92,60 @@ public class ManagerTurns extends JDialog {
 		getContentPane().add(txtpnWelcomeToThe);
 
 		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(335, 228, 89, 23);
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				switch (randnum())
+				{
+				case 0:
+					event = "Restaurant gets sued! Lose $2000 from your budget";
+					budget -= 2000;
+					fame += 10;
+					satisfaction -=20;
+					break;
+				case 1:
+					event = "Locals love your restaurant!";
+					budget += 500;
+					fame -= 5;
+					satisfaction +=10;
+					break;
+				case 2:
+					event = "A couple cases of cold food have been reported! Pay $500 in compensation.";
+					budget -= 500;
+					fame -= 10;
+					satisfaction -=10;
+					break;
+				case 3:
+					event = "A new item on the menu was a success!";
+					budget += 1000;
+					fame += 10;
+					satisfaction +=10;
+					break;
+				case 4:
+					event = "Restaurant gets sued! Lose $2000 from your budget";
+					budget -= 2000;
+					fame += 10;
+					satisfaction -=20;
+					break;
+				case 5:
+					
+					break;
+				case 6:
+					
+					break;
+				case 7:
+					
+					break;
+				case 8:
+					
+					break;
+				case 9:
+					
+					break;
+				}
+			}
+		});
+		btnNext.setBounds(334, 340, 89, 23);
 		getContentPane().add(btnNext);
 
 		JRadioButton radioButton = new JRadioButton(storeItems[0]);
@@ -131,6 +198,19 @@ public class ManagerTurns extends JDialog {
 		managerGroup.add(radioButton_7);
 		managerGroup.add(radioButton_8);
 		managerGroup.add(radioButton_9);
+		
+		JTextPane txtpnEvent = new JTextPane();
+		txtpnEvent.setText("Event: " + event);
+		txtpnEvent.setBounds(10, 226, 413, 102);
+		getContentPane().add(txtpnEvent);
 
+	}
+	
+	public static int randnum ()
+	{
+		Random rand = new Random();
+		int randomNum = rand.nextInt((9 - 0) + 1) + 0;
+		return randomNum;
+		
 	}
 }
