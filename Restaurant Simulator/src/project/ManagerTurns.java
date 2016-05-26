@@ -272,13 +272,31 @@ public class ManagerTurns extends JDialog {
 			}
 		
 		});
+		
+		isEnd(satisfaction, fame, budget);
 	}
 	
-	public static int randnum ()
+	public int randnum ()
 	{
 		Random rand = new Random();
 		int randomNum = rand.nextInt((9 - 0) + 1) + 0;
 		return randomNum;
 		
+	}
+	
+	public void isEnd (int sat, int fame, int budget)
+	{
+		if (sat == 0 || fame == 0 || budget == 0)
+		{
+			ManagerLoseGame newWindow = new ManagerLoseGame();
+			newWindow.setVisible(true);
+			setVisible(false);
+		}
+		else if (sat == 100 || fame == 100)
+		{
+			ManagerWinGame newWindow = new ManagerWinGame();
+			newWindow.setVisible(true);
+			setVisible(false);
+		}
 	}
 }
