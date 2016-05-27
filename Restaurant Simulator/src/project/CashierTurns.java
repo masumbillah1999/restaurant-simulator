@@ -39,6 +39,7 @@ public class CashierTurns extends JDialog {
 	 * Create the dialog.
 	 */
 	public CashierTurns() {
+		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CashierTurns.class.getResource("/project/restaurant logo.png")));
 		setTitle("Cashier Game");
 		setBounds(100, 100, 450, 300);
@@ -46,7 +47,7 @@ public class CashierTurns extends JDialog {
 		
 		String[] customers = {"Bob","Jack","Timmy","John","Steve","Jacob","Jim","Stacey","Angelina","Tyrone"};
 		String[] items = {"Chicken","Beef","Pork","Veggies","Lamb","Steamed Crab","Lobster","Salad","Mac & Cheese","Omelette"};
-		double[] prices =  {9.95, 15.45, 12.45, 8.50, 16.99, 22.75, 25.30, 5.45, 8.95, 6.45};
+		double[] prices =  {9.95, 15.45, 12.45, 8.50, 16.95, 22.75, 25.30, 5.45, 8.95, 6.45};
 		
 		Random r = new Random();
 		int randName = r.nextInt((9 - 0) + 1) + 0;
@@ -85,21 +86,21 @@ public class CashierTurns extends JDialog {
 		
 		JTextPane txtpnFood = new JTextPane();
 		txtpnFood.setEditable(false);
-		int randFood1 = r.nextInt(10)+1;
+		int randFood1 = r.nextInt((9 - 0) + 1) + 0;
 		txtpnFood.setText(items[randFood1] + "     $" + prices[randFood1]);
 		txtpnFood.setBounds(270, 125, 154, 28);
 		getContentPane().add(txtpnFood);
 		
 		JTextPane textPane = new JTextPane();
 		textPane.setEditable(false);
-		int randFood2 = r.nextInt(10)+1;
+		int randFood2 = r.nextInt((9 - 0) + 1) + 0;
 		textPane.setText(items[randFood2] + "     $" + prices[randFood2]);
 		textPane.setBounds(270, 164, 154, 28);
 		getContentPane().add(textPane);
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setEditable(false);
-		int randFood3 = r.nextInt(10)+1;
+		int randFood3 = r.nextInt((9 - 0) + 1) + 0;
 		textPane_1.setText(items[randFood3] + "     $" + prices[randFood3]);
 		textPane_1.setBounds(270, 203, 154, 28);
 		getContentPane().add(textPane_1);
@@ -114,17 +115,18 @@ public class CashierTurns extends JDialog {
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {			
 				String input = textField.getText();
+				System.out.println(input);
+				double inputPrice = Double.parseDouble(input);
+				System.out.println(inputPrice);
 				double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
 				
-					double inputPrice = Double.parseDouble(input);
-					if (inputPrice == total){
+				System.out.println(total);
+				
+					if (total == inputPrice){
 						textPane_2.setText("Correct!");
 					} else {
-						textPane_2.setText("Incorrect input. Please try again");
-					}
-					
-				
-								
+						textPane_2.setText("Incorrect input");
+					}							
 			
 			}			
 		});
