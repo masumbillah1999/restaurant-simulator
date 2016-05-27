@@ -46,7 +46,7 @@ public class CashierTurns extends JDialog {
 		
 		String[] customers = {"Bob","Jack","Timmy","John","Steve","Jacob","Jim","Stacey","Angelina","Tyrone"};
 		String[] items = {"Chicken","Beef","Pork","Veggies","Lamb","Steamed Crab","Lobster","Salad","Mac & Cheese","Omelette"};
-		double[] prices =  {3.95, 4.25, 4.00, 2.95, 4.50, 6.25, 7.15, 2.25, 3.25, 3.15};
+		double[] prices =  {9.95, 15.45, 12.45, 8.50, 16.99, 22.75, 25.30, 5.45, 8.95, 6.45};
 		
 		Random r = new Random();
 		int randName = r.nextInt((9 - 0) + 1) + 0;
@@ -115,7 +115,7 @@ public class CashierTurns extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {			
 				String input = textField.getText();
 				double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
-				while (input.contains("[a-zA-Z]+") == false){
+				
 					double inputPrice = Double.parseDouble(input);
 					if (inputPrice == total){
 						textPane_2.setText("Correct!");
@@ -123,7 +123,7 @@ public class CashierTurns extends JDialog {
 						textPane_2.setText("Incorrect input. Please try again");
 					}
 					
-				}
+				
 								
 			
 			}			
