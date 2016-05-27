@@ -11,6 +11,9 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import java.awt.SystemColor;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CashierTurns extends JDialog {
 	private JTextField textField;
@@ -48,7 +51,7 @@ public class CashierTurns extends JDialog {
 		Random r = new Random();
 		int randName = r.nextInt(10)+1;
 		
-		JLabel lblEnterInputHere = new JLabel("Enter Input Here");
+		JLabel lblEnterInputHere = new JLabel("Enter Total Price Here");
 		lblEnterInputHere.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblEnterInputHere.setBounds(45, 25, 215, 50);
 		getContentPane().add(lblEnterInputHere);
@@ -75,33 +78,55 @@ public class CashierTurns extends JDialog {
 		
 		JTextPane txtpnBill = new JTextPane();
 		txtpnBill.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		txtpnBill.setText("Bill:");
+		txtpnBill.setText("Receipt:");
 		txtpnBill.setEditable(false);
 		txtpnBill.setBounds(270, 86, 154, 28);
 		getContentPane().add(txtpnBill);
 		
 		JTextPane txtpnFood = new JTextPane();
+		txtpnFood.setEditable(false);
 		int randFood1 = r.nextInt(10)+1;
 		txtpnFood.setText(items[randFood1] + "     $" + prices[randFood1]);
 		txtpnFood.setBounds(270, 125, 154, 28);
 		getContentPane().add(txtpnFood);
 		
 		JTextPane textPane = new JTextPane();
+		textPane.setEditable(false);
 		int randFood2 = r.nextInt(10)+1;
 		textPane.setText(items[randFood2] + "     $" + prices[randFood2]);
 		textPane.setBounds(270, 164, 154, 28);
 		getContentPane().add(textPane);
 		
 		JTextPane textPane_1 = new JTextPane();
+		textPane_1.setEditable(false);
 		int randFood3 = r.nextInt(10)+1;
 		textPane_1.setText(items[randFood3] + "     $" + prices[randFood3]);
 		textPane_1.setBounds(270, 203, 154, 28);
 		getContentPane().add(textPane_1);
+		
 
-		for (int i = 0; i < 5; i++){
-			randFood1 = r.nextInt(10)+1;
-			
-		}
+		JTextPane textPane_2 = new JTextPane();
+		textPane_2.setEditable(false);
+		textPane_2.setBounds(45, 222, 154, 28);
+		getContentPane().add(textPane_2);
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			String input = textField.getText();
+			double inputPrice = Double.parseDouble(input);
+			double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
+			if (inputPrice == total){
+				textPane_2.setText("Correct!");
+
+				
+			} else {
+				textPane_2.setText("Incorrect. Please try again");
+			}
+			}
+		});
+		btnNext.setBounds(110, 130, 89, 23);
+		getContentPane().add(btnNext);
 		
 
 			
