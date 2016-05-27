@@ -49,7 +49,7 @@ public class CashierTurns extends JDialog {
 		double[] prices =  {3.95, 4.25, 4.00, 2.95, 4.50, 6.25, 7.15, 2.25, 3.25, 3.15};
 		
 		Random r = new Random();
-		int randName = r.nextInt(10)+1;
+		int randName = r.nextInt((9 - 0) + 1) + 0;
 		
 		JLabel lblEnterInputHere = new JLabel("Enter Total Price Here");
 		lblEnterInputHere.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -112,18 +112,21 @@ public class CashierTurns extends JDialog {
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			String input = textField.getText();
-			double inputPrice = Double.parseDouble(input);
-			double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
-			if (inputPrice == total){
-				textPane_2.setText("Correct!");
-
-				
-			} else {
-				textPane_2.setText("Incorrect. Please try again");
-			}
-			}
+			public void actionPerformed(ActionEvent arg0) {			
+				String input = textField.getText();
+				double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
+				while (input.contains("[a-zA-Z]+") == false){
+					double inputPrice = Double.parseDouble(input);
+					if (inputPrice == total){
+						textPane_2.setText("Correct!");
+					} else {
+						textPane_2.setText("Incorrect input. Please try again");
+					}
+					
+				}
+								
+			
+			}			
 		});
 		btnNext.setBounds(110, 130, 89, 23);
 		getContentPane().add(btnNext);
