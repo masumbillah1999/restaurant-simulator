@@ -266,9 +266,16 @@ public class ManagerTurns extends JDialog {
 					satisfaction -=20;
 					break;
 				}
-				ManagerTurns newWindow = new ManagerTurns();
-				newWindow.setVisible(true);
-				setVisible(false);
+				System.out.println(satisfaction + "yay" + fame);
+				//ManagerTurns newWindow = new ManagerTurns();
+				//newWindow.setVisible(true);
+				//setVisible(false);
+				txtpnYourCurrentBudget.setText("Your current budget: " + budget + "$");
+				txtpnEvent.setText("Event: " + event);
+				txtpnSatisfaction.setText("Satisfaction: " + satisfaction);
+				txtpnFame.setText("Fame:" + fame);
+				txtpnEvent.setText("Event: " + event);
+				System.out.println(satisfaction + "yay2" + fame);
 			}
 		
 		});
