@@ -42,7 +42,7 @@ public class CashierTurns extends JDialog {
 	public CashierTurns() {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CashierTurns.class.getResource("/project/restaurant logo.png")));
-		setTitle("Cashier Game");
+		setTitle("Cashier Game"); 
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
@@ -117,7 +117,10 @@ public class CashierTurns extends JDialog {
 		getContentPane().add(lblScore);
 		
 		JTextPane txtpnScore = new JTextPane();
+		txtpnScore.setEditable(false);
 		txtpnScore.setBounds(45, 191, 60, 20);
+		String scoreFinal = "" + score;
+		txtpnScore.setText(scoreFinal);
 		getContentPane().add(txtpnScore);
 		
 		JButton btnNext = new JButton("Next");
@@ -135,17 +138,20 @@ public class CashierTurns extends JDialog {
 					} else {
 						textPane_2.setText("Incorrect input");
 						score-=5;
+						System.out.println("test");
 					}							
 				
 				} else {
 					textPane_2.setText("Not a valid input");
-					score+=5;
+					score-=5;
 				}
-				String scoreFinal = "" + score;
-				txtpnScore.setText(scoreFinal);
+			
+				
 				CashierTurns newWindow = new CashierTurns();
-				newWindow.setVisible(true);
 				setVisible(false);
+				newWindow.setVisible(true);
+				
+			
 				
 				
 			}			
