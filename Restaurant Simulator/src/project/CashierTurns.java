@@ -39,11 +39,10 @@ public class CashierTurns extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	//test
 	public CashierTurns() {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CashierTurns.class.getResource("/project/restaurant logo.png")));
-		setTitle("Cashier Game"); 
+		setTitle("Cashier Game");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
@@ -126,7 +125,8 @@ public class CashierTurns extends JDialog {
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {			
+			public void actionPerformed(ActionEvent arg0) {	
+				
 				String input = textField.getText();
 				boolean checker = input.matches(".*[a-zA-Z]+.*");
 				if (checker == false){
@@ -139,19 +139,15 @@ public class CashierTurns extends JDialog {
 					} else {
 						textPane_2.setText("Incorrect input");
 						score-=5;
-						System.out.println("test");
 					}							
 				
 				} else {
 					textPane_2.setText("Not a valid input");
 					score-=5;
 				}
-			
 				
-				CashierTurns newWindow = new CashierTurns();
-				setVisible(false);
-				newWindow.setVisible(true);
-				
+				String scoreFinal = "" + score;
+				txtpnScore.setText(scoreFinal);
 			
 				
 				
