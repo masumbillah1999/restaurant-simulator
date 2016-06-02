@@ -39,6 +39,7 @@ public class CashierTurns extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	//test
 	public CashierTurns() {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CashierTurns.class.getResource("/project/restaurant logo.png")));
