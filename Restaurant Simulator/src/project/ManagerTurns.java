@@ -333,3 +333,4 @@ public class ManagerTurns extends JDialog {
 		}
 	}
 }
+//

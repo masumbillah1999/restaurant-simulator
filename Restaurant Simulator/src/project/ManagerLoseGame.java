@@ -48,3 +48,4 @@ public class ManagerLoseGame extends JDialog {
 
 	}
 }
+//
