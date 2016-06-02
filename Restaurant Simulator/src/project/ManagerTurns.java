@@ -51,7 +51,7 @@ public class ManagerTurns extends JDialog {
 	 * Create the dialog.
 	 */
 	
-	public int budget = 10000, satisfaction = 50, fame = 50;
+	public static int budget = 10000, satisfaction = 50, fame = 50;
 	public static String event;
 	
 	public ManagerTurns() {
