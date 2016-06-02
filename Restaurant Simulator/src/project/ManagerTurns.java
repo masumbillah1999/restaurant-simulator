@@ -1,3 +1,11 @@
+/*
+ * Masum Billah & Calvin Veenkamp
+ * 342149929 322936881
+ * 02/06/16
+ * Restaurant Simulator ManagerTurns program
+ * This method runs the managers turns, including all calculations and openning/closing windows
+ */
+
 package project;
 
 import java.awt.EventQueue;
