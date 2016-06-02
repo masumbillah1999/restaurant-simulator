@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 
 public class CashierTurns extends JDialog {
 	private JTextField textField;
+	public int score = 50;
 
 	/**
 	 * Launch the application.
@@ -111,27 +112,53 @@ public class CashierTurns extends JDialog {
 		textPane_2.setBounds(45, 222, 154, 28);
 		getContentPane().add(textPane_2);
 		
+		JLabel lblScore = new JLabel("Score:");
+		lblScore.setBounds(45, 176, 46, 14);
+		getContentPane().add(lblScore);
+		
+		JTextPane txtpnScore = new JTextPane();
+		txtpnScore.setEditable(false);
+		txtpnScore.setBounds(45, 191, 60, 20);
+		String scoreFinal = "" + score;
+		txtpnScore.setText(scoreFinal);
+		getContentPane().add(txtpnScore);
+		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {			
+			public void actionPerformed(ActionEvent arg0) {	
+				
 				String input = textField.getText();
-				System.out.println(input);
+				boolean checker = input.matches(".*[a-zA-Z]+.*");
+				if (checker == false){
 				double inputPrice = Double.parseDouble(input);
-				System.out.println(inputPrice);
 				double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
-				
-				System.out.println(total);
-				
 					if (total == inputPrice){
 						textPane_2.setText("Correct!");
+						score+=5;
+						
 					} else {
 						textPane_2.setText("Incorrect input");
+						score-=5;
 					}							
+				
+				} else {
+					textPane_2.setText("Not a valid input");
+					score-=5;
+				}
+				
+				String scoreFinal = "" + score;
+				txtpnScore.setText(scoreFinal);
 			
+				
+				
 			}			
 		});
 		btnNext.setBounds(110, 130, 89, 23);
 		getContentPane().add(btnNext);
+		
+		
+		
+		
 		
 
 			
