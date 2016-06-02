@@ -311,7 +311,7 @@ public class ManagerTurns extends JDialog {
 	}
 	
 	/**
-	 * Checks if the game is voer
+	 * Checks if the game is over
 	 * @param sat the satisfaction score
 	 * @param fame the fame score
 	 * @param budget the budget amount
