@@ -51,7 +51,7 @@ public class ManagerTurns extends JDialog {
 	 * Create the dialog.
 	 */
 	
-	public static int budget = 10000, satisfaction = 50, fame = 50;
+	public int budget = 10000, satisfaction = 50, fame = 50;
 	public static String event;
 	
 	public ManagerTurns() {
@@ -147,22 +147,22 @@ public class ManagerTurns extends JDialog {
 		
 		if (radioButton.isSelected())
 		{
-			budget -= 150;
+			budget -= 500;
 			satisfaction +=5;
 		}
 		else if (radioButton_1.isSelected())
 		{
-			budget -= 200;
+			budget -= 600;
 			satisfaction +=10;
 		}
 		else if (radioButton_2.isSelected())
 		{
-			budget -= 500;
+			budget -= 1000;
 			satisfaction += 15;
 		}
 		else if (radioButton_3.isSelected())
 		{
-			budget -= 1000;
+			budget -= 1500;
 			satisfaction +=15;
 			fame += 5;
 		}
@@ -174,22 +174,22 @@ public class ManagerTurns extends JDialog {
 		}
 		else if (radioButton_5.isSelected())
 		{
-			budget -= 150;
+			budget -= 500;
 			fame +=5;
 		}
 		else if (radioButton_6.isSelected())
 		{
-			budget -= 200;
+			budget -= 600;
 			fame +=10;
 		}
 		else if (radioButton_7.isSelected())
 		{
-			budget -= 500;
+			budget -= 1000;
 			fame +=15;
 		}
 		else if (radioButton_8.isSelected())
 		{
-			budget -= 1000;
+			budget -= 1500;
 			fame +=15;
 			satisfaction += 5;
 		}
