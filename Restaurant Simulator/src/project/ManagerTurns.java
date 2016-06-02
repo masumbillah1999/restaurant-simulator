@@ -145,60 +145,7 @@ public class ManagerTurns extends JDialog {
 		managerGroup.add(radioButton_8);
 		managerGroup.add(radioButton_9);
 		
-		if (radioButton.isSelected())
-		{
-			budget -= 500;
-			satisfaction +=5;
-		}
-		else if (radioButton_1.isSelected())
-		{
-			budget -= 600;
-			satisfaction +=10;
-		}
-		else if (radioButton_2.isSelected())
-		{
-			budget -= 1000;
-			satisfaction += 15;
-		}
-		else if (radioButton_3.isSelected())
-		{
-			budget -= 1500;
-			satisfaction +=15;
-			fame += 5;
-		}
-		else if (radioButton_4.isSelected())
-		{
-			budget -= 2000;
-			satisfaction +=15;
-			fame += 10;
-		}
-		else if (radioButton_5.isSelected())
-		{
-			budget -= 500;
-			fame +=5;
-		}
-		else if (radioButton_6.isSelected())
-		{
-			budget -= 600;
-			fame +=10;
-		}
-		else if (radioButton_7.isSelected())
-		{
-			budget -= 1000;
-			fame +=15;
-		}
-		else if (radioButton_8.isSelected())
-		{
-			budget -= 1500;
-			fame +=15;
-			satisfaction += 5;
-		}
-		else if (radioButton_9.isSelected())
-		{
-			budget -= 2000;
-			fame +=15;
-			satisfaction += 10;
-		}
+		
 		
 		JTextPane txtpnEvent = new JTextPane();
 		txtpnEvent.setText("Event: " + event);
@@ -211,6 +158,61 @@ public class ManagerTurns extends JDialog {
 		
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				if (radioButton.isSelected())
+				{
+					budget -= 500;
+					satisfaction +=5;
+				}
+				else if (radioButton_1.isSelected())
+				{
+					budget -= 600;
+					satisfaction +=10;
+				}
+				else if (radioButton_2.isSelected())
+				{
+					budget -= 1000;
+					satisfaction += 15;
+				}
+				else if (radioButton_3.isSelected())
+				{
+					budget -= 1500;
+					satisfaction +=15;
+					fame += 5;
+				}
+				else if (radioButton_4.isSelected())
+				{
+					budget -= 2000;
+					satisfaction +=15;
+					fame += 10;
+				}
+				else if (radioButton_5.isSelected())
+				{
+					budget -= 500;
+					fame +=5;
+				}
+				else if (radioButton_6.isSelected())
+				{
+					budget -= 600;
+					fame +=10;
+				}
+				else if (radioButton_7.isSelected())
+				{
+					budget -= 1000;
+					fame +=15;
+				}
+				else if (radioButton_8.isSelected())
+				{
+					budget -= 1500;
+					fame +=15;
+					satisfaction += 5;
+				}
+				else if (radioButton_9.isSelected())
+				{
+					budget -= 2000;
+					fame +=15;
+					satisfaction += 10;
+				}
 				
 				switch (randnum())
 				{
@@ -266,16 +268,15 @@ public class ManagerTurns extends JDialog {
 					satisfaction -=20;
 					break;
 				}
-				System.out.println(satisfaction + "yay" + fame);
-				//ManagerTurns newWindow = new ManagerTurns();
-				//newWindow.setVisible(true);
-				//setVisible(false);
-				txtpnYourCurrentBudget.setText("Your current budget: " + budget + "$");
+				
+				ManagerTurns newWindow = new ManagerTurns();
+				newWindow.setVisible(true);
+				setVisible(false);
+				/*txtpnYourCurrentBudget.setText("Your current budget: " + budget + "$");
 				txtpnEvent.setText("Event: " + event);
 				txtpnSatisfaction.setText("Satisfaction: " + satisfaction);
 				txtpnFame.setText("Fame:" + fame);
-				txtpnEvent.setText("Event: " + event);
-				System.out.println(satisfaction + "yay2" + fame);
+				txtpnEvent.setText("Event: " + event);*/
 			}
 		
 		});
