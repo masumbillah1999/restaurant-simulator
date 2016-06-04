@@ -13,11 +13,16 @@ import javax.swing.JTextPane;
 import java.awt.SystemColor;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 import java.awt.event.ActionEvent;
 
 public class CashierTurns extends JDialog {
 	private JTextField textField;
-	public int score = 50;
+	public static int score = 50;
+	public static String result;
+	public static String scoreFinal;
+	public static long start, now;
+	public static int tip = 0;
 
 	/**
 	 * Launch the application.
@@ -43,7 +48,7 @@ public class CashierTurns extends JDialog {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CashierTurns.class.getResource("/project/restaurant logo.png")));
 		setTitle("Cashier Game");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 276);
 		getContentPane().setLayout(null);
 		
 		String[] customers = {"Bob","Jack","Timmy","John","Steve","Jacob","Jim","Stacey","Angelina","Tyrone"};
@@ -105,56 +110,85 @@ public class CashierTurns extends JDialog {
 		textPane_1.setText(items[randFood3] + "     $" + prices[randFood3]);
 		textPane_1.setBounds(270, 203, 154, 28);
 		getContentPane().add(textPane_1);
+		scoreFinal = "" + score;
 		
-
+		JButton btnStore = new JButton("Disable Time ($15)");
+		btnStore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+			}
+		});
+		btnStore.setBounds(10, 213, 250, 23);
+		getContentPane().add(btnStore);
+		
 		JTextPane textPane_2 = new JTextPane();
 		textPane_2.setEditable(false);
-		textPane_2.setBounds(45, 222, 154, 28);
+		textPane_2.setText("$ " + tip);
+		textPane_2.setBounds(10, 188, 89, 20);
 		getContentPane().add(textPane_2);
 		
-		JLabel lblScore = new JLabel("Score:");
-		lblScore.setBounds(45, 176, 46, 14);
-		getContentPane().add(lblScore);
+		JLabel lblTip = new JLabel("Tip:");
+		lblTip.setBounds(10, 164, 46, 14);
+		getContentPane().add(lblTip);
 		
-		JTextPane txtpnScore = new JTextPane();
-		txtpnScore.setEditable(false);
-		txtpnScore.setBounds(45, 191, 60, 20);
-		String scoreFinal = "" + score;
-		txtpnScore.setText(scoreFinal);
-		getContentPane().add(txtpnScore);
+		start = System.currentTimeMillis();
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {	
-				
+				now = System.currentTimeMillis();
+				double time =  (now - start) / 1000.0;
+				int timeScore = 0;
 				String input = textField.getText();
 				boolean checker = input.matches(".*[a-zA-Z]+.*");
 				if (checker == false){
 				double inputPrice = Double.parseDouble(input);
-				double total = prices[randFood1] + prices[randFood2] + prices[randFood3];
+				BigDecimal totalBigNumber = new BigDecimal( prices[randFood1] + prices[randFood2] + prices[randFood3]).setScale(2, BigDecimal.ROUND_HALF_UP);
+				double total = totalBigNumber.doubleValue();
 					if (total == inputPrice){
-						textPane_2.setText("Correct!");
-						score+=5;
+						System.out.println(time + " time");
+						if (time < 10.0){
+							timeScore = 5;
+							tip+=5;
+						} else if (time < 15.0){
+							timeScore = 4;
+						} else if (time < 20.0){
+							timeScore = 3;
+						} else if (time < 25.0){
+							timeScore = 2; 
+						} else {
+							timeScore = 1; 
+						}
+						
+						result = "Correct. +" + timeScore;
+						score+=timeScore;
+						textPane_2.setText("$ " + tip);
 						
 					} else {
-						textPane_2.setText("Incorrect input");
+						result = "Incorrect input -5";
 						score-=5;
 					}							
 				
-				} else {
-					textPane_2.setText("Not a valid input");
-					score-=5;
 				}
 				
-				String scoreFinal = "" + score;
-				txtpnScore.setText(scoreFinal);
-			
+				else {
+					result = "Not a valid input. Try again";
+				}
 				
+				
+				
+				scoreFinal = "" + score;
+				
+			
+				Result_Cashier newWindow = new Result_Cashier();
+				newWindow.setVisible(true);
+				setVisible(false);
 				
 			}			
 		});
-		btnNext.setBounds(110, 130, 89, 23);
+		btnNext.setBounds(110, 117, 89, 23);
 		getContentPane().add(btnNext);
+		
 		
 		
 		
