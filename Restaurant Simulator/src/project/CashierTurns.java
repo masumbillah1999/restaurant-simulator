@@ -23,6 +23,7 @@ public class CashierTurns extends JDialog {
 	public static String scoreFinal;
 	public static long start, now;
 	public static int tip = 0;
+	public static boolean powerup = false;
 
 	/**
 	 * Launch the application.
@@ -112,14 +113,8 @@ public class CashierTurns extends JDialog {
 		getContentPane().add(textPane_1);
 		scoreFinal = "" + score;
 		
-		JButton btnStore = new JButton("Disable Time ($15)");
-		btnStore.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			
-			}
-		});
-		btnStore.setBounds(10, 213, 250, 23);
-		getContentPane().add(btnStore);
+		
+		
 		
 		JTextPane textPane_2 = new JTextPane();
 		textPane_2.setEditable(false);
@@ -131,6 +126,27 @@ public class CashierTurns extends JDialog {
 		lblTip.setBounds(10, 164, 46, 14);
 		getContentPane().add(lblTip);
 		
+		JTextPane textPane_3 = new JTextPane();
+		textPane_3.setEditable(false);
+		textPane_3.setBounds(109, 188, 151, 20);
+		getContentPane().add(textPane_3);
+		
+		JButton btnStore = new JButton("Disable Time ($15)");
+		btnStore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (tip >= 15){
+					textPane_3.setText("Timer Disabled!");
+					powerup = true;
+					tip-= 15;
+					textPane_2.setText("$ " + tip);
+				} else {
+					textPane_3.setText("Not Enough Funds!");
+				}
+				
+			}
+		});
+		btnStore.setBounds(10, 213, 250, 23);
+		getContentPane().add(btnStore);
 		start = System.currentTimeMillis();
 		
 		JButton btnNext = new JButton("Next");
@@ -147,21 +163,29 @@ public class CashierTurns extends JDialog {
 				double total = totalBigNumber.doubleValue();
 					if (total == inputPrice){
 						System.out.println(time + " time");
-						if (time < 10.0){
-							timeScore = 5;
-							tip+=5;
-						} else if (time < 15.0){
-							timeScore = 4;
-						} else if (time < 20.0){
-							timeScore = 3;
-						} else if (time < 25.0){
-							timeScore = 2; 
-						} else {
-							timeScore = 1; 
+						if (powerup == false){
+							if (time < 10.0){
+								timeScore = 5;
+								tip+=5;
+							} else if (time < 11.5){
+								timeScore = 4;
+								tip += 2;
+							} else if (time < 13.0){
+								timeScore = 3;
+								tip += 1;
+							} else if (time < 14.5){
+								timeScore = 2; 
+							} else {
+								timeScore = 1; 
+							}
+							
+							result = "Correct. +" + timeScore;
+							score+=timeScore;
+						} else if (powerup == true){
+							result = "Correct. +5";
+							score+=5;
 						}
 						
-						result = "Correct. +" + timeScore;
-						score+=timeScore;
 						textPane_2.setText("$ " + tip);
 						
 					} else {
@@ -188,6 +212,8 @@ public class CashierTurns extends JDialog {
 		});
 		btnNext.setBounds(110, 117, 89, 23);
 		getContentPane().add(btnNext);
+		
+		
 		
 		
 		
