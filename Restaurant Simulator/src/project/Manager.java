@@ -1,3 +1,11 @@
+/*
+ * Masum Billah & Calvin Veenkamp
+ * 342149929 322936881
+ * 02/06/16
+ * Restaurant Simulator ManagerTurns program
+ * This class displays brief instructions for how to play manager, then sends them to the ManagerTurns class
+ */
+
 package project;
 
 import java.awt.EventQueue;
@@ -20,7 +28,7 @@ import java.awt.SystemColor;
 public class Manager extends JDialog {
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -37,13 +45,13 @@ public class Manager extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public Manager() {
-		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Manager.class.getResource("/project/restaurant logo.png")));
-		setTitle("Manager");
-		setBounds(100, 100, 450, 300);
+		setResizable(false);//makes sure the text box is not resizable
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Manager.class.getResource("/project/restaurant logo.png")));//gets logo for the top of the window
+		setTitle("Manager");//sets title of the window
+		setBounds(100, 100, 450, 300);//text box dimensions
 		getContentPane().setLayout(null);
 		
 		JTextPane txtpnSdfsd = new JTextPane();

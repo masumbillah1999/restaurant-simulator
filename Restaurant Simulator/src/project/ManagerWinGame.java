@@ -3,7 +3,7 @@
  * 342149929 322936881
  * 02/06/16
  * Restaurant Simulator ManagerTurns program
- * This class displays end win message and finishes the program
+ * This class displays end "win" message and finishes the program
  */
 
 package project;
@@ -18,7 +18,7 @@ import javax.swing.JLabel;
 public class ManagerWinGame extends JDialog {
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -35,7 +35,7 @@ public class ManagerWinGame extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public ManagerWinGame() {
 		setBounds(100, 100, 450, 300);//sets the size of the window

@@ -3,7 +3,7 @@
  * 342149929 322936881
  * 02/06/16
  * Restaurant Simulator ManagerLoseGame program
- * This class displays end message lose and finishes the program
+ * This class displays end message "lose" and finishes the program
  */
 
 package project;
@@ -18,7 +18,7 @@ import javax.swing.JLabel;
 public class ManagerLoseGame extends JDialog {
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -35,7 +35,7 @@ public class ManagerLoseGame extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public ManagerLoseGame() {
 		setBounds(100, 100, 450, 300);//sets text size
