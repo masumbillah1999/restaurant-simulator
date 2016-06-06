@@ -119,7 +119,7 @@ public class ManagerTurns extends JDialog {
 		rdbtnHoldACharity.setBounds(6, 170, 231, 23);
 		getContentPane().add(rdbtnHoldACharity);
 
-		JRadioButton rdbtnSponserLocalSports = new JRadioButton("Sponser local sports team (2200$)");
+		JRadioButton rdbtnSponserLocalSports = new JRadioButton("Spons0r local sports team (2200$)");
 		rdbtnSponserLocalSports.setBounds(6, 196, 231, 23);
 		getContentPane().add(rdbtnSponserLocalSports);
 
