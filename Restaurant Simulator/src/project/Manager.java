@@ -2,7 +2,7 @@
  * Masum Billah & Calvin Veenkamp
  * 342149929 322936881
  * 02/06/16
- * Restaurant Simulator ManagerTurns program
+ * Restaurant Simulator Manager program
  * This class displays brief instructions for how to play manager, then sends them to the ManagerTurns class
  */
 
@@ -56,21 +56,21 @@ public class Manager extends JDialog {
 		
 		JTextPane txtpnSdfsd = new JTextPane();
 		txtpnSdfsd.setBackground(SystemColor.control);
-		txtpnSdfsd.setEditable(false);
-		txtpnSdfsd.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtpnSdfsd.setText("You have chosen to become a manager!\r\n\r\nYou will have a starting budget of $10 000 to spend on anything you like to gain fame and customer satisfaction. Remember that at the end of your turn, you may either gain/lose fame, satisfaction and budget.\r\n\r\nBe careful!\r\n*click the \"next\" buton to start your first turn");
-		txtpnSdfsd.setBounds(0, 25, 434, 195);
+		txtpnSdfsd.setEditable(false);//makes the text box non-editable
+		txtpnSdfsd.setFont(new Font("Tahoma", Font.PLAIN, 15));//sets the text font and size
+		txtpnSdfsd.setText("You have chosen to become a manager!\r\n\r\nYou will have a starting budget of $10 000 to spend on anything you like to gain fame and customer satisfaction. Remember that at the end of your turn, you may either gain/lose fame, satisfaction and budget.\r\n\r\nBe careful!\r\n*click the \"next\" buton to start your first turn"); //message to be displayed
+		txtpnSdfsd.setBounds(0, 25, 434, 195);//sets text box dimensions
 		getContentPane().add(txtpnSdfsd);
 		
-		JButton btnNext = new JButton("Next");
+		JButton btnNext = new JButton("Next");//sets a name for the button
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ManagerTurns newWindow = new ManagerTurns();
+				ManagerTurns newWindow = new ManagerTurns();//opens the ManagerTurns class when the button is pressed
 				newWindow.setVisible(true);
-				setVisible(false);
+				setVisible(false);//hides this window
 			}
 		});
-		btnNext.setBounds(345, 238, 89, 23);
+		btnNext.setBounds(345, 238, 89, 23);//sets the dimensions of the button
 		getContentPane().add(btnNext);
 
 		
