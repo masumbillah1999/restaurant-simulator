@@ -1,3 +1,10 @@
+/**
+ * Masum Billah & Calvin Veenkamp
+ * 342149929 322936881
+ * 02/06/16
+ * Restaurant Simulator ManagerTurns program
+ * This method runs the cashiers turns, including all calculations and opening/closing windows
+ */
 package project;
 
 import java.awt.EventQueue;
@@ -218,17 +225,22 @@ public class CashierTurns extends JDialog {
 		});
 		btnNext.setBounds(110, 117, 89, 23);
 		getContentPane().add(btnNext);
-		
-		
-
-		
-		
-		
-		
-		
-		
-
 			
-		
+	}
+	public void isEnd (int score)
+	{
+		//checks if any of the scores are less than or equal to zero (then the user loses) or fame or satisfaction is greater than 100 (user wins)
+		if (score <= 0)
+		{
+			LoseGame newWindow = new LoseGame();//opens a lose game window
+			newWindow.setVisible(true);
+			setVisible(false);//hides current window
+		}
+		else if (score >= 100)
+		{
+			WinGame newWindow = new WinGame();//opens a win game window
+			newWindow.setVisible(true);
+			setVisible(false);//hides current window
+		}
 	}
 }

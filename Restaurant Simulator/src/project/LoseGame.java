@@ -15,7 +15,7 @@ import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JLabel;
 
-public class ManagerLoseGame extends JDialog {
+public class LoseGame extends JDialog {
 
 	/**
 	 * Launch the application.
@@ -24,7 +24,7 @@ public class ManagerLoseGame extends JDialog {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ManagerLoseGame dialog = new ManagerLoseGame();
+					LoseGame dialog = new LoseGame();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				} catch (Exception e) {
@@ -37,7 +37,7 @@ public class ManagerLoseGame extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public ManagerLoseGame() {
+	public LoseGame() {
 		setBounds(100, 100, 450, 300);//sets text size
 		getContentPane().setLayout(null);
 		
