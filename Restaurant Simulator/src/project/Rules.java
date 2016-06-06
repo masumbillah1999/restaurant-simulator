@@ -1,3 +1,11 @@
+/*
+ * Masum Billah & Calvin Veenkamp
+ * 342149929 322936881
+ * 02/06/16
+ * Restaurant Simulator Rules program
+ * This class displays the game rules
+ */
+
 package project;
 
 import java.awt.BorderLayout;
@@ -31,11 +39,11 @@ public class Rules extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 
 	/**
-	 * Launch the application.
+	 * Launches the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			Rules dialog = new Rules();
+			Rules dialog = new Rules();//creates a new dialog
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -44,20 +52,20 @@ public class Rules extends JDialog {
 	}
 
 	/**
-	 * Create the dialog.
+	 * Creates the dialog.
 	 */
 	public Rules() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Rules.class.getResource("/project/restaurant logo.png")));
-		setResizable(false);
-		setTitle("Rules");
-		setBounds(100, 100, 450, 300);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Rules.class.getResource("/project/restaurant logo.png")));//displays restaurant logo
+		setResizable(false);//makes it non-resizable
+		setTitle("Rules");//sets title of dialog to "Rules"
+		setBounds(100, 100, 450, 300);//sets dimensions
 		getContentPane().setLayout(null);
 		contentPanel.setBounds(0, 260, 434, 1);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
 		{
-			JButton okButton = new JButton("OK");
+			JButton okButton = new JButton("OK");//creates the "OK button"
 			okButton.setBounds(377, 227, 47, 23);
 			contentPanel.add(okButton);
 			okButton.setActionCommand("OK");
