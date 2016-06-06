@@ -16,9 +16,6 @@ import java.awt.Toolkit;
 
 public class GameMode extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7078597591677850909L;
 	private final JPanel contentPanel = new JPanel();
 

@@ -11,9 +11,6 @@ import javax.swing.JLabel;
 
 public class Result_Cashier extends JDialog {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7868112565094808526L;
 
 	/**

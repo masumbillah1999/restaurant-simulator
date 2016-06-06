@@ -24,11 +24,9 @@ import java.math.BigDecimal;
 import java.awt.event.ActionEvent;
 
 public class CashierTurns extends JDialog {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -3865296265279349927L;
-	private JTextField textField;
+	private JTextField textField; //textfield initialized
 	public static int score = 50;
 	public static String result;
 	public static String scoreFinal;

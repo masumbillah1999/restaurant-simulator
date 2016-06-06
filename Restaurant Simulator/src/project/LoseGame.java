@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 
 public class LoseGame extends JDialog {
 
+	private static final long serialVersionUID = -2997434508525678659L;
+
 	/**
 	 * Launch the application.
 	 */

@@ -19,6 +19,8 @@ import java.awt.SystemColor;
 
 public class Manager extends JDialog {
 
+	private static final long serialVersionUID = 639111262609411241L;
+
 	/**
 	 * Launch the application.
 	 */

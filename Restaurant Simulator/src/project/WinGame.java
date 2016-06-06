@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 
 public class WinGame extends JDialog {
 
+	private static final long serialVersionUID = 3072639445768418398L;
+
 	/**
 	 * Launch the application.
 	 */
