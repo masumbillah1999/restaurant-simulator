@@ -103,43 +103,43 @@ public class ManagerTurns extends JDialog {
 		
 	
 		//radio buttons are declared and sized
-		JRadioButton rdbtnPottedPlants = new JRadioButton("Potted Plants (500$)");
+		JRadioButton rdbtnPottedPlants = new JRadioButton("Potted Plants (700$)");
 		rdbtnPottedPlants.setBounds(6, 87, 231, 23);
 		getContentPane().add(rdbtnPottedPlants);
 
-		JRadioButton rdbtnHigherQualityFood = new JRadioButton("Higher quality food (600$)");
+		JRadioButton rdbtnHigherQualityFood = new JRadioButton("Higher quality food (800$)");
 		rdbtnHigherQualityFood.setBounds(6, 116, 231, 23);
 		getContentPane().add(rdbtnHigherQualityFood);
 
-		JRadioButton rdbtnProvideFreeMeals = new JRadioButton("Provide free meals to kids (1000$)");
+		JRadioButton rdbtnProvideFreeMeals = new JRadioButton("Provide free meals to kids (1200$)");
 		rdbtnProvideFreeMeals.setBounds(6, 144, 231, 23);
 		getContentPane().add(rdbtnProvideFreeMeals);
 
-		JRadioButton rdbtnHoldACharity = new JRadioButton("Hold a charity fundraiser (1500$)");
+		JRadioButton rdbtnHoldACharity = new JRadioButton("Hold a charity fundraiser (1700$)");
 		rdbtnHoldACharity.setBounds(6, 170, 231, 23);
 		getContentPane().add(rdbtnHoldACharity);
 
-		JRadioButton rdbtnSponserLocalSports = new JRadioButton("Sponser local sports team (2000$)");
+		JRadioButton rdbtnSponserLocalSports = new JRadioButton("Sponser local sports team (2200$)");
 		rdbtnSponserLocalSports.setBounds(6, 196, 231, 23);
 		getContentPane().add(rdbtnSponserLocalSports);
 
-		JRadioButton rdbtnEmployeeInA = new JRadioButton("Employee in a mascot costume (500$)");
+		JRadioButton rdbtnEmployeeInA = new JRadioButton("Employee in a mascot costume (700$)");
 		rdbtnEmployeeInA.setBounds(239, 87, 248, 23);
 		getContentPane().add(rdbtnEmployeeInA);
 
-		JRadioButton rdbtnNewspaperArticle = new JRadioButton("Newspaper article (600$)");
+		JRadioButton rdbtnNewspaperArticle = new JRadioButton("Newspaper article (800$)");
 		rdbtnNewspaperArticle.setBounds(239, 116, 248, 23);
 		getContentPane().add(rdbtnNewspaperArticle);
 
-		JRadioButton rdbtnFancyTableCloths = new JRadioButton("Fancy table cloths (1000$)");
+		JRadioButton rdbtnFancyTableCloths = new JRadioButton("Fancy table cloths (1200$)");
 		rdbtnFancyTableCloths.setBounds(239, 144, 248, 23);
 		getContentPane().add(rdbtnFancyTableCloths);
 
-		JRadioButton rdbtnCreateAWebsite = new JRadioButton("Create a website (1500$)");
+		JRadioButton rdbtnCreateAWebsite = new JRadioButton("Create a website (1700$)");
 		rdbtnCreateAWebsite.setBounds(239, 170, 248, 23);
 		getContentPane().add(rdbtnCreateAWebsite);
 
-		JRadioButton rdbtnForgeYelpReviews = new JRadioButton("Forge Yelp reviews (2000$)");
+		JRadioButton rdbtnForgeYelpReviews = new JRadioButton("Forge Yelp reviews (2200$)");
 		rdbtnForgeYelpReviews.setBounds(239, 196, 248, 23);
 		getContentPane().add(rdbtnForgeYelpReviews);
 
@@ -175,56 +175,56 @@ public class ManagerTurns extends JDialog {
 				//If else statements check which radio button ended up being selected and implements its effects on the score
 				if (rdbtnPottedPlants.isSelected())
 				{
-					budget -= 500;
+					budget -= 700;
 					satisfaction +=5;
 				}
 				else if (rdbtnHigherQualityFood.isSelected())
 				{
-					budget -= 600;
+					budget -= 800;
 					satisfaction +=10;
 				}
 				else if (rdbtnProvideFreeMeals.isSelected())
 				{
-					budget -= 1000;
-					satisfaction += 15;
+					budget -= 1200;
+					satisfaction += 10;
 				}
 				else if (rdbtnHoldACharity.isSelected())
 				{
-					budget -= 1500;
-					satisfaction +=15;
+					budget -= 1700;
+					satisfaction +=10;
 					fame += 5;
 				}
 				else if (rdbtnSponserLocalSports.isSelected())
 				{
-					budget -= 2000;
-					satisfaction +=15;
+					budget -= 2200;
+					satisfaction +=10;
 					fame += 10;
 				}
 				else if (rdbtnEmployeeInA.isSelected())
 				{
-					budget -= 500;
+					budget -= 700;
 					fame +=5;
 				}
 				else if (rdbtnNewspaperArticle.isSelected())
 				{
-					budget -= 600;
+					budget -= 800;
 					fame +=10;
 				}
 				else if (rdbtnFancyTableCloths.isSelected())
 				{
-					budget -= 1000;
-					fame +=15;
+					budget -= 1200;
+					fame +=10;
 				}
 				else if (rdbtnCreateAWebsite.isSelected())
 				{
-					budget -= 1500;
-					fame +=15;
+					budget -= 1700;
+					fame +=10;
 					satisfaction += 5;
 				}
 				else if (rdbtnForgeYelpReviews.isSelected())
 				{
-					budget -= 2000;
-					fame +=15;
+					budget -= 2200;
+					fame +=10;
 					satisfaction += 10;
 				}
 				
@@ -234,14 +234,14 @@ public class ManagerTurns extends JDialog {
 				case 0:
 					event = "Restaurant gets sued! Lose $2000 from your budget";
 					budget -= 2000;
-					fame += 10;
+					fame += 5;
 					satisfaction -=20;
 					break;
 				case 1:
 					event = "Locals love your restaurant!";
 					budget += 500;
 					fame -= 5;
-					satisfaction +=10;
+					satisfaction +=5;
 					break;
 				case 2:
 					event = "A couple cases of cold food have been reported! Pay $500 in compensation.";
@@ -252,8 +252,8 @@ public class ManagerTurns extends JDialog {
 				case 3:
 					event = "A new item on the menu was a success!";
 					budget += 1000;
-					fame += 10;
-					satisfaction +=10;
+					fame += 5;
+					satisfaction +=5;
 					break;
 				case 4:
 					event = "Your restaurant gets 'meh' reviews, nothing happens";
@@ -261,7 +261,7 @@ public class ManagerTurns extends JDialog {
 				case 5:
 					event = "Restaurant becomes haunted, call the Ghostbusters";
 					budget -= 5000;
-					fame += 23;
+					fame += 11;
 					break;
 				case 6:
 					event = "Find a loonie on the ground and pick it up, customers think you're cheap";
@@ -271,7 +271,7 @@ public class ManagerTurns extends JDialog {
 					break;
 				case 7:
 					event = "Your restaurant has the same name as another famous restaurant in Italy";
-					fame += 15;
+					fame += 7;
 					break;
 				case 8:
 					event = "Store wins the lottery (somehow)";
