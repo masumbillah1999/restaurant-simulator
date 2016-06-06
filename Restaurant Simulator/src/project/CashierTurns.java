@@ -1,3 +1,10 @@
+/**
+ * Masum Billah & Calvin Veenkamp
+ * 342149929 322936881
+ * 02/06/16
+ * Restaurant Simulator ManagerTurns program
+ * This method runs the cashiers turns, including all calculations and opening/closing windows
+ */
 package project;
 
 import java.awt.EventQueue;
@@ -17,14 +24,16 @@ import java.math.BigDecimal;
 import java.awt.event.ActionEvent;
 
 public class CashierTurns extends JDialog {
-	private JTextField textField;
+
+	private static final long serialVersionUID = -3865296265279349927L;
+	private JTextField textField; //textfield initialized
 	public static int score = 50;
 	public static String result;
 	public static String scoreFinal;
 	public static long start, now;
 	public static int tip = 0;
 	public static boolean powerup = false;
-
+	public static double time = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -61,7 +70,7 @@ public class CashierTurns extends JDialog {
 		
 		JLabel lblEnterInputHere = new JLabel("Enter Total Price Here");
 		lblEnterInputHere.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblEnterInputHere.setBounds(45, 25, 215, 50);
+		lblEnterInputHere.setBounds(42, 25, 215, 50);
 		getContentPane().add(lblEnterInputHere);
 		
 		textField = new JTextField();
@@ -116,19 +125,15 @@ public class CashierTurns extends JDialog {
 		
 		
 		
-		JTextPane textPane_2 = new JTextPane();
-		textPane_2.setEditable(false);
-		textPane_2.setText("$ " + tip);
-		textPane_2.setBounds(10, 188, 89, 20);
-		getContentPane().add(textPane_2);
-		
-		JLabel lblTip = new JLabel("Tip:");
-		lblTip.setBounds(10, 164, 46, 14);
-		getContentPane().add(lblTip);
+		JTextPane txtpnTip = new JTextPane();
+		txtpnTip.setEditable(false);
+		txtpnTip.setText("Tip: $ " + tip);
+		txtpnTip.setBounds(10, 188, 89, 20);
+		getContentPane().add(txtpnTip);
 		
 		JTextPane textPane_3 = new JTextPane();
 		textPane_3.setEditable(false);
-		textPane_3.setBounds(109, 188, 151, 20);
+		textPane_3.setBounds(109, 188, 148, 20);
 		getContentPane().add(textPane_3);
 		
 		JButton btnStore = new JButton("Disable Time ($15)");
@@ -138,7 +143,7 @@ public class CashierTurns extends JDialog {
 					textPane_3.setText("Timer Disabled!");
 					powerup = true;
 					tip-= 15;
-					textPane_2.setText("$ " + tip);
+					txtpnTip.setText("Tip: $ " + tip);
 				} else {
 					textPane_3.setText("Not Enough Funds!");
 				}
@@ -148,6 +153,12 @@ public class CashierTurns extends JDialog {
 		btnStore.setBounds(10, 213, 250, 23);
 		getContentPane().add(btnStore);
 		start = System.currentTimeMillis();
+		
+		JTextPane txtpnScore = new JTextPane();
+		txtpnScore.setText("Score: " + scoreFinal);
+		txtpnScore.setBounds(10, 164, 89, 20);
+		getContentPane().add(txtpnScore);
+		
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
@@ -164,16 +175,16 @@ public class CashierTurns extends JDialog {
 					if (total == inputPrice){
 						System.out.println(time + " time");
 						if (powerup == false){
-							if (time < 10.0){
+							if (time <= 15.0){
 								timeScore = 5;
 								tip+=5;
-							} else if (time < 11.5){
+							} else if (time <= 17.0){
 								timeScore = 4;
 								tip += 2;
-							} else if (time < 13.0){
+							} else if (time <= 19.0){
 								timeScore = 3;
 								tip += 1;
-							} else if (time < 14.5){
+							} else if (time <= 21.0){
 								timeScore = 2; 
 							} else {
 								timeScore = 1; 
@@ -186,7 +197,7 @@ public class CashierTurns extends JDialog {
 							score+=5;
 						}
 						
-						textPane_2.setText("$ " + tip);
+						txtpnTip.setText("$ " + tip);
 						
 					} else {
 						result = "Incorrect input -5";
@@ -212,16 +223,22 @@ public class CashierTurns extends JDialog {
 		});
 		btnNext.setBounds(110, 117, 89, 23);
 		getContentPane().add(btnNext);
-		
-		
-		
-		
-		
-		
-		
-		
-
 			
-		
+	}
+	public void isEnd (int score)
+	{
+		//checks if any of the scores are less than or equal to zero (then the user loses) or fame or satisfaction is greater than 100 (user wins)
+		if (score <= 0)
+		{
+			LoseGame newWindow = new LoseGame();//opens a lose game window
+			newWindow.setVisible(true);
+			setVisible(false);//hides current window
+		}
+		else if (score >= 100)
+		{
+			WinGame newWindow = new WinGame();//opens a win game window
+			newWindow.setVisible(true);
+			setVisible(false);//hides current window
+		}
 	}
 }

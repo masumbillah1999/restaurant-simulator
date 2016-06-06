@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 
 public class Result_Cashier extends JDialog {
 
+	private static final long serialVersionUID = 7868112565094808526L;
+
 	/**
 	 * Launch the application.
 	 */
@@ -42,16 +44,7 @@ public class Result_Cashier extends JDialog {
 		getContentPane().add(textPane);
 		textPane.setText(CashierTurns.result);
 		
-		JButton btnOk = new JButton("Next");
-		btnOk.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				setVisible(false);
-				CashierTurns newWindow = new CashierTurns();
-				newWindow.setVisible(true);
-			}
-		});
-		btnOk.setBounds(130, 97, 89, 23);
-		getContentPane().add(btnOk);
+	
 		
 		JLabel label = new JLabel("Score:");
 		label.setBounds(10, 75, 46, 14);
@@ -62,6 +55,17 @@ public class Result_Cashier extends JDialog {
 		textPane_1.setEditable(false);
 		textPane_1.setBounds(10, 100, 60, 20);
 		getContentPane().add(textPane_1);
-
+		
+		
+		JButton btnOk = new JButton("Next");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				CashierTurns newWindow = new CashierTurns();
+				newWindow.setVisible(true);
+			}
+		});
+		btnOk.setBounds(130, 97, 89, 23);
+		getContentPane().add(btnOk);
 	}
 }

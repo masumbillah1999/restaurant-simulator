@@ -321,13 +321,13 @@ public class ManagerTurns extends JDialog {
 		//checks if any of the scores are less than or equal to zero (then the user loses) or fame or satisfaction is greater than 100 (user wins)
 		if (sat <= 0 || fame <= 0 || budget <= 0)
 		{
-			ManagerLoseGame newWindow = new ManagerLoseGame();//opens a lose game window
+			LoseGame newWindow = new LoseGame();//opens a lose game window
 			newWindow.setVisible(true);
 			setVisible(false);//hides current window
 		}
 		else if (sat >= 100 || fame >= 100)
 		{
-			ManagerWinGame newWindow = new ManagerWinGame();//opens a win game window
+			WinGame newWindow = new WinGame();//opens a win game window
 			newWindow.setVisible(true);
 			setVisible(false);//hides current window
 		}
