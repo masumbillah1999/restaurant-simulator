@@ -16,7 +16,7 @@ import java.awt.Toolkit;
 
 public class Main_graphic {
 
-	private JFrame frmAtmBankMachine;
+	private JFrame frmRestaurantSimulator;
 	private JTextField textField;
 	public static String restaurantName; 
 
@@ -28,7 +28,7 @@ public class Main_graphic {
 			public void run() {
 				try {
 					Main_graphic window = new Main_graphic();
-					window.frmAtmBankMachine.setVisible(true);
+					window.frmRestaurantSimulator.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,29 +47,29 @@ public class Main_graphic {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmAtmBankMachine = new JFrame();
-		frmAtmBankMachine.setIconImage(Toolkit.getDefaultToolkit().getImage(Main_graphic.class.getResource("/project/restaurant logo.png")));
-		frmAtmBankMachine.setResizable(false);
-		frmAtmBankMachine.setTitle("Restaurant Simulator\r\n");
-		frmAtmBankMachine.setBounds(100, 100, 540, 281);
-		frmAtmBankMachine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmAtmBankMachine.getContentPane().setLayout(null);
+		frmRestaurantSimulator = new JFrame();
+		frmRestaurantSimulator.setIconImage(Toolkit.getDefaultToolkit().getImage(Main_graphic.class.getResource("/project/restaurant logo.png")));
+		frmRestaurantSimulator.setResizable(false);
+		frmRestaurantSimulator.setTitle("Restaurant Simulator\r\n");
+		frmRestaurantSimulator.setBounds(100, 100, 540, 281);
+		frmRestaurantSimulator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRestaurantSimulator.getContentPane().setLayout(null);
 		
 		JLabel lblWelcomeToMasum = new JLabel("Welcome to Masum & Calvin's Restaurant Simulator!");
 		lblWelcomeToMasum.setFont(new Font("Imprint MT Shadow", Font.BOLD, 20));
 		lblWelcomeToMasum.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcomeToMasum.setBounds(10, 36, 514, 53);
-		frmAtmBankMachine.getContentPane().add(lblWelcomeToMasum);
+		frmRestaurantSimulator.getContentPane().add(lblWelcomeToMasum);
 		
 		JLabel lblToGetStarted = new JLabel("To get started, pick a name for your restaurant");
 		lblToGetStarted.setFont(new Font("Calibri", Font.PLAIN, 15));
 		lblToGetStarted.setHorizontalAlignment(SwingConstants.CENTER);
 		lblToGetStarted.setBounds(118, 100, 297, 28);
-		frmAtmBankMachine.getContentPane().add(lblToGetStarted);
+		frmRestaurantSimulator.getContentPane().add(lblToGetStarted);
 		
 		textField = new JTextField();
 		textField.setBounds(128, 139, 287, 20);
-		frmAtmBankMachine.getContentPane().add(textField);
+		frmRestaurantSimulator.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNext = new JButton("Next");
@@ -81,6 +81,6 @@ public class Main_graphic {
 			}
 		});
 		btnNext.setBounds(435, 206, 89, 23);
-		frmAtmBankMachine.getContentPane().add(btnNext);
+		frmRestaurantSimulator.getContentPane().add(btnNext);
 	}
 }
