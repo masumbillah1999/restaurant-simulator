@@ -60,7 +60,7 @@ public class Manager extends JDialog {
 		txtpnSdfsd.setBackground(SystemColor.control);
 		txtpnSdfsd.setEditable(false);//makes the text box non-editable
 		txtpnSdfsd.setFont(new Font("Tahoma", Font.PLAIN, 15));//sets the text font and size
-		txtpnSdfsd.setText("You have chosen to become a manager!\r\n\r\nYou will have a starting budget of $10 000 to spend on anything you like to gain fame and customer satisfaction. Remember that at the end of your turn, you may either gain/lose fame, satisfaction and budget.\r\n\r\nBe careful!\r\n*click the \"next\" buton to start your first turn"); //message to be displayed
+		txtpnSdfsd.setText("You have chosen to become a manager!\r\n\r\nYou will have a starting budget of $10 000 to spend on anything you like to gain fame and customer satisfaction. Every round can select only one item to purchase, when you have your decision, press the \"next\" button. Remember that at the end of your turn, you may either gain/lose fame, satisfaction and budget.\r\n\r\nBe careful!\r\n*click the \"next\" buton to start your first turn"); //message to be displayed
 		txtpnSdfsd.setBounds(0, 25, 434, 195);//sets text box dimensions
 		getContentPane().add(txtpnSdfsd);
 		
